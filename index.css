@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-50: #fef2f2;
+  --color-primary-100: #fee2e2;
+  --color-primary-200: #fecaca;
+  --color-primary-300: #fca5a5;
+  --color-primary-400: #f87171;
+  --color-primary-500: #ef4444;
+  --color-primary-600: #dc2626;
+  --color-primary-700: #b91c1c;
+  --color-primary-800: #991b1b;
+  --color-primary-900: #7f1d1d;
+  --color-dark-50: #f5f5f5;
+  --color-dark-100: #e5e5e5;
+  --color-dark-200: #d4d4d4;
+  --color-dark-300: #a3a3a3;
+  --color-dark-400: #737373;
+  --color-dark-500: #525252;
+  --color-dark-600: #404040;
+  --color-dark-700: #262626;
+  --color-dark-800: #1a1a1a;
+  --color-dark-900: #0a0a0a;
+  --color-dark-950: #050505;
+  --color-success-400: #4ade80;
+  --color-success-500: #22c55e;
+  --color-success-600: #16a34a;
+  --color-warning-400: #fbbf24;
+  --color-warning-500: #f59e0b;
+  --color-warning-600: #d97706;
+  --color-info-400: #60a5fa;
+  --color-info-500: #3b82f6;
+  --color-info-600: #2563eb;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-family: var(--font-sans); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; -webkit-tap-highlight-color: transparent; }
+body { background: #0a0a0a; color: #e5e5e5; min-height: 100vh; overflow-x: hidden; }
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: #1a1a1a; }
+::-webkit-scrollbar-thumb { background: #404040; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #525252; }
+
+.glass { background: rgba(26, 26, 26, 0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.06); }
+.glass-light { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
+.glass-red { background: rgba(220, 38, 38, 0.08); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(220, 38, 38, 0.15); }
+.glow-red { box-shadow: 0 0 20px rgba(220, 38, 38, 0.15), 0 0 60px rgba(220, 38, 38, 0.05); }
+.text-glow { text-shadow: 0 0 20px rgba(220, 38, 38, 0.5); }
+
+.animate-fade-in { animation: fadeIn 0.3s ease-out; }
+.animate-slide-up { animation: slideUp 0.4s ease-out; }
+.animate-scale-in { animation: scaleIn 0.2s ease-out; }
+.animate-pulse-glow { animation: pulseGlow 2s ease-in-out infinite; }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes scaleIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+@keyframes pulseGlow { 0%, 100% { box-shadow: 0 0 20px rgba(220, 38, 38, 0.15); } 50% { box-shadow: 0 0 40px rgba(220, 38, 38, 0.3); } }
+@keyframes float1 { 0%, 100% { transform: translate(0, 0); } 33% { transform: translate(30px, 40px); } 66% { transform: translate(-20px, 20px); } }
+@keyframes float2 { 0%, 100% { transform: translate(0, 0); } 33% { transform: translate(-40px, -30px); } 66% { transform: translate(20px, -40px); } }
+@keyframes float3 { 0%, 100% { transform: translate(-50%, -50%) scale(1); } 50% { transform: translate(-50%, -50%) scale(1.15); } }
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+input[type="number"] { -moz-appearance: textfield; }
+
+@media print { .no-print { display: none !important; } body { background: white; color: black; } }
+.receipt-print { font-family: 'Courier New', monospace; font-size: 12px; line-height: 1.4; max-width: 80mm; margin: 0 auto; padding: 8px; }
+
+@media (max-width: 640px) {
+  .mobile-full { width: 100% !important; max-width: 100% !important; }
+  .mobile-stack { flex-direction: column !important; }
+  .mobile-p2 { padding: 0.5rem !important; }
+  .mobile-text-sm { font-size: 0.875rem !important; }
+}
